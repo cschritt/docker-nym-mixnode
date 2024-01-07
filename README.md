@@ -26,16 +26,14 @@ docker build -t nym-mixnode:latest --build-arg VERSION=v2023.5-rolo .
 
 ### Using compose
 > [!IMPORTANT]
-> Make sure to adjust the configuration and environment variables according to your specific requirements before running the Docker Compose commands.
+> Make sure to adjust the configuration and environment variables according to your specific requirements before running the Docker Compose commands (see [configuration](#configuration)).
 
-1. Adjust the volume configuration and `NYM_NODE_ID` in the `docker-compose.yml` file to your needs (see [configuration](#configuration)).
-
-2. Run the following command to initialize the Nym mixnode:
+1. Run the following command to initialize the Nym mixnode:
 ```bash
 docker-compose run init
 ```
 
-3. After the initialization is successful, start the Nym mixnode:
+1. After the initialization is successful, start the Nym mixnode:
 ```bash
 docker-compose up mixnode
 ```
