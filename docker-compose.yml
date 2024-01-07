@@ -1,0 +1,29 @@
+---
+volumes:
+  nym-node-data:
+
+x-common-env: &cenv
+  NYM_NODE_ID: <node-id>
+
+services:
+  init:
+    build:
+      context: .
+    command: init --id <node-id> --host <node-ip>
+    environment:
+      <<: *cenv
+    volumes:
+      - nym-node-data:/home/nym/.nym
+
+  mixnode:
+    build:
+      context: .
+    command: run --id <node-id>
+    environment:
+      <<: *cenv
+    volumes:
+      - nym-node-data:/home/nym/.nym
+    ports:
+      - 1789:1789
+      - 1790:1790
+      - 8000:8000
