@@ -3,7 +3,7 @@ FROM debian:stable-slim
 ARG VERSION="v2023.5-rolo"
 
 RUN apt-get update \
-  && apt-get install --yes --no-install-recommends wget curl openssl libssl-dev \
+  && apt-get install --yes --no-install-recommends ca-certificates wget curl openssl libssl-dev \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 RUN wget -q https://github.com/nymtech/nym/releases/download/nym-binaries-${VERSION}/nym-mixnode -O /usr/local/bin/nym-mixnode
