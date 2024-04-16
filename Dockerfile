@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-ARG VERSION="v2023.5-rolo"
+ARG VERSION="v2024.1-marabou"
 
 RUN apt-get update \
   && apt-get install --yes --no-install-recommends ca-certificates wget curl openssl libssl-dev \
