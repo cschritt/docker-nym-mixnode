@@ -22,7 +22,11 @@
         "github-actions"
       ],
 
-      "pinDigest": false
+      "pinDigest": false,
+
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
     }
   ]
 }
