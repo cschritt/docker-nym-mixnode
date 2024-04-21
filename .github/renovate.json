@@ -7,13 +7,20 @@
 
   "printConfig": true,
 
+  "hostRules": [
+    {
+      "hostType": "docker",
+      "username": "process.env.DOCKERHUB_USERNAME",
+      "password": "process.env.DOCKERHUB_TOKEN"
+    }
+  ]
+
   "packageRules": [
     {
       "groupName": "gh-actions",
       "matchManagers": [
         "github-actions"
       ],
-      "enabled": true,
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
