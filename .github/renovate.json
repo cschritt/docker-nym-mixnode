@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "extends": [
+    ":dependencyDashboard",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":ignoreModulesAndTests",
+    "group:monorepos",
+    "group:recommended",
+    "replacements:all",
+    "workarounds:all",
+    ":rebaseStalePrs",
+    ":labels(dependencies)"
+  ],
+
+  "description": "default renovate preset",
+  "gitAuthor": "Renovate Bot <renovate@humbug.dev>",
+
+  "labels": ["renovate"],
+  "platform": "github",
+  "assignees": ["cschritt"],
+  "configMigration": true,
+
+  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "unresolved",
+  "osvVulnerabilityAlerts": true,
+  "detectHostRulesFromEnv": true
+}
