@@ -12,10 +12,6 @@
     ":rebaseStalePrs",
     ":labels(dependencies)"
   ],
-
-  "description": "default renovate preset",
-  "gitAuthor": "Renovate Bot <renovate@humbug.dev>",
-
   "labels": ["renovate"],
   "platform": "github",
   "assignees": ["cschritt"],
