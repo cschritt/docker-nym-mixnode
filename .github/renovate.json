@@ -8,7 +8,9 @@
   "packageRules": [
     {
       "groupName": "gh-actions",
-      "matchDepTypes":["action"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "enabled": true,
       "automerge": true,
       "automergeType": "pr",
