@@ -7,13 +7,6 @@
 
   "printConfig": true,
 
-  "hostRules": [
-    {
-      "hostType": "docker",
-      "password": "process.env.DOCKERHUB_TOKEN"
-    }
-  ],
-
   "packageRules": [
     {
       "groupName": "gh-actions",
