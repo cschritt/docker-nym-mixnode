@@ -36,8 +36,8 @@ jobs:
       - name: Self-hosted Renovate
         uses: "renovatebot/github-action@v40.1.10"
         env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
           GITHUB_COM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
@@ -46,6 +46,7 @@ jobs:
           RENOVATE_PLATFORM: "github"
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_REQUIRE_CONFIG: "optional"
+          RENOVATE_EXPOSE_ALL_ENV: true
         with:
           configurationFile: .github/renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
