@@ -38,5 +38,5 @@ jobs:
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
           LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
         with:
-          configurationFile: renovate.json
+          #configurationFile: renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
