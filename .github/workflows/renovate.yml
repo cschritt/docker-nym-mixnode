@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: "actions/checkout@v4.1.1"
 
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v40.1.10
+        uses: "renovatebot/github-action@v40.1.10"
         env:
           LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
