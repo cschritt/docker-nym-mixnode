@@ -26,6 +26,13 @@ jobs:
       - name: Checkout
         uses: "actions/checkout@v4.1.1"
 
+
+      - name: DockerHub Login
+        uses: docker/login-action@v2.1.0
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
       - name: Self-hosted Renovate
         uses: "renovatebot/github-action@v40.1.10"
         env:
