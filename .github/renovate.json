@@ -3,5 +3,16 @@
 
   "extends":[
     "config:best-practices"
+  ],
+
+  "packageRules": [
+    {
+      "groupName": "gh-actions",
+      "matchDepTypes":["action"],
+      "enabled": true,
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
   ]
 }
