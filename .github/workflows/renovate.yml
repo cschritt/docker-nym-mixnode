@@ -1,0 +1,53 @@
+---
+name: Renovate
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Override renovate log level"
+        required: false
+        default: "debug"
+        type: string
+      overrideSchedule:
+        description: "Override renovate schedules"
+        required: false
+        default: "false"
+        type: string
+
+concurrency: renovate
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: "actions/checkout@v4.1.1"
+
+
+      - name: DockerHub Login
+        uses: "docker/login-action@v3"
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Self-hosted Renovate
+        uses: "renovatebot/github-action@v40.1.10"
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+          GITHUB_COM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
+          RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
+          RENOVATE_GIT_AUTHOR: "Renovate Bot <renovatebot@humbug.dev>"
+          RENOVATE_ONBOARDING: false
+          RENOVATE_PLATFORM: "github"
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          RENOVATE_REQUIRE_CONFIG: "optional"
+          RENOVATE_EXPOSE_ALL_ENV: true
+          RENOVATE_DETECT_HOST_RULES_FROM_ENV: true
+        with:
+          configurationFile: .github/renovate.json
+          token: ${{ secrets.RENOVATE_TOKEN }}

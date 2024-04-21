@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: cleanup old versions
-        uses: actions/delete-package-versions@v5
+        uses: "actions/delete-package-versions@v5"
         with:
           owner: 'cschritt'
           package-name: 'nym-mixnode'

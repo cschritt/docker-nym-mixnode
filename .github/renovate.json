@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "extends":[
+    "config:best-practices"
+  ],
+
+  "printConfig": true,
+
+  "hostRules": [
+    {
+      "hostType": "docker",
+      "matchHost": "docker.io",
+      "password": "process.env.DOCKER_PASSWORD"
+    }
+  ],
+
+  "packageRules": [
+    {
+      "groupName": "gh-actions",
+      "matchManagers": [
+        "github-actions"
+      ],
+
+      "pinDigest": false
+    }
+  ]
+}
