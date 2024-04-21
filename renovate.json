@@ -4,5 +4,6 @@
     "config:recommended"
   ],
 
+  "platform": "github",
   "gitAuthor": "renovatebot@humbug.dev"
 }
