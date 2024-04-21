@@ -37,8 +37,10 @@ jobs:
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.9
         env:
+          RENOVATE_ONBOARDING: false
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
           LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
         with:
+          configurationFile: renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
