@@ -12,10 +12,7 @@
       "groupName": "gh-actions",
       "matchManagers": [
         "github-actions"
-      ],
-      "automerge": true,
-      "automergeType": "pr",
-      "platformAutomerge": true
+      ]
     }
   ]
 }
