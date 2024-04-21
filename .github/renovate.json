@@ -10,8 +10,7 @@
   "hostRules": [
     {
       "hostType": "docker",
-      "username": "process.env.DOCKERHUB_USERNAME",
-      "token": "process.env.DOCKERHUB_TOKEN"
+      "password": "process.env.DOCKERHUB_TOKEN"
     }
   ],
 
