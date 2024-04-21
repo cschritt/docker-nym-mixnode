@@ -10,7 +10,8 @@
   "hostRules": [
     {
       "hostType": "docker",
-      "password": "process.env.DOCKERHUB_TOKEN"
+      "matchHost": "docker.io",
+      "password": "process.env.DOCKER_PASSWORD"
     }
   ],
 
