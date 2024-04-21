@@ -20,7 +20,9 @@
       "groupName": "gh-actions",
       "matchManagers": [
         "github-actions"
-      ]
+      ],
+
+      "pinDigest": false
     }
   ]
 }
