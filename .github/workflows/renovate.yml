@@ -32,7 +32,7 @@ jobs:
 
       # Don't waste time starting Renovate if JSON is invalid
       - name: Validate Renovate JSON
-        run: jq type renovate.json
+        run: jq type .github/renovate.json
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.9
