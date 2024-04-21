@@ -11,7 +11,7 @@
     {
       "hostType": "docker",
       "username": "process.env.DOCKERHUB_USERNAME",
-      "password": "process.env.DOCKERHUB_TOKEN"
+      "token": "process.env.DOCKERHUB_TOKEN"
     }
   ],
 
