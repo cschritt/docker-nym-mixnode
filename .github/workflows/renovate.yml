@@ -38,6 +38,7 @@ jobs:
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          GITHUB_COM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
           RENOVATE_GIT_AUTHOR: "Renovate Bot <renovatebot@humbug.dev>"
