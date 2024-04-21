@@ -5,6 +5,8 @@
     "config:best-practices"
   ],
 
+  "printConfig": true,
+
   "packageRules": [
     {
       "groupName": "gh-actions",
